@@ -1,4 +1,0 @@
-api_public = '3LGY4ztLleP9tjnoB06EPKute'
-api_private = 'YyXTsCV4xk2dDvNt3IG8pxVGQPyMBBMnED3wVmBEBGRZEaY3UF'
-access_public = '213984195-HMkZtF3BPG9IGxORa6dBxgd3vwkA1rgEJF4SScWR'
-access_private = 'Hfop5yMdJfSh2ZATegZAkzIzCD7amMM3Pzy4zntueWEeY'
