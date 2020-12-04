@@ -12,9 +12,11 @@ else:
 DATABASE_DIR = ''
 twitter_scrap = search_tweet.ScrapperBot(DATABASE_DIR)
 
-tweet_date = str(datetime.now().strftime("%Y-%m-%d"))
-hashtags = ['#coronavaccine', '#antivaxxer', '#vaccine', '#antivax', '#antivaccine', '#vaccinedeath']
-query = f"({' OR '.join(hashtags)}) since:{tweet_date} lang:en -filter:retweets"
+tweet_date = str(datetime.now().strftime("%Y-%m-%d")) # set date here
+keywords = [] # put the search keywords (hashtags, ordinary keywords, etc.) here
+
+filters = "since:{tweet_date} lang:en -filter:retweets"
+query = f"({' OR '.join(keywords)})" + filters
 
 result = twitter_scrap.get_tweets(query, n_tweet=n_tweet)
 # for key, value in result.items():

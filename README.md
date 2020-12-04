@@ -51,3 +51,35 @@ sqlite3.exe NewDatabase.db ".read databaseInit.sql"
 
 
 
+### Menjalankan Modul
+
+Untuk menjalankan modul, gunakan perintah berikut:
+
+
+
+Python 3
+
+```python
+python3 main.py [argumen]
+```
+
+
+
+Argumen dapat diganti dengan angka yang menyatakan banyaknya _tweet_ yang ingin diambil. Jika argumen kosong, maka main.py akan mengambil 50 _tweet_.
+
+
+
+### Pengaturan main.py
+
+##### 1. Tanggal _tweet_
+
+Tanggal _tweet_ dapat diubah pada variabel `tweet_date`. Silahkan ubah dalam isi variabel ini dalam format YYYY-mm-dd dengan tipe data _string_.
+
+##### 2. Kata kunci pencarian
+
+Kata kunci pencarian (dalam bentuk kata, _hashtag_, dll) dapat diubah dalam variabel `keywords`. Isi variabel `keywords` adalah _list_ Python yang setiap elemennya adalah _string_.
+
+##### 3. Kueri pencarian
+
+Pada variabel `filters`, Anda dapat mengubah nilainya menjadi kueri lanjutan seperti pada [petunjuk berikut](https://unionmetrics.com/resources/how-to-use-advanced-twitter-search-queries/).  Variabel `query` akan menggabungkan semua nilai `keywords` dan `filters` menjadi satu _string_ kata kunci untuk scrapping data _tweet_.
+
