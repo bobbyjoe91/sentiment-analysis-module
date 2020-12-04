@@ -16,7 +16,7 @@ tweet_date = str(datetime.now().strftime("%Y-%m-%d")) # set date here
 keywords = [''] # put the search keywords (hashtags, ordinary keywords, etc.) here
 
 filters = f"since:{tweet_date} lang:en -filter:retweets" # twitter search filter
-query = f"({' OR '.join(keywords)}) " + filters
+query = f"({' OR '.join(keywords)}) {filters}"
 
 result = twitter_scrap.get_tweets(query, n_tweet=n_tweet)
 
