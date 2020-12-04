@@ -42,18 +42,20 @@ class ScrapperBot:
         get_last_scraping_date = '''SELECT MAX(l.last_get) FROM Lastscraping l'''
         self.cursor.execute(get_last_scraping_date)
         last_scraping_date = self.cursor.fetchone()[0]
-        last_scraping_date = last_scraping_date.split(' ')[0]
 
-        today_date = str(date.today())
+        if last_scraping_date != None: # suppose the Lastscraping table isn't empty
+            last_scraping_date = last_scraping_date.split(' ')[0]
 
-        if today_date != last_scraping_date:
-            yesterday_status_update = f'''
-                UPDATE Lastscraping SET status = 0 
-                WHERE last_get <= strftime('{last_scraping_date} 23:59:59') 
-                AND status = 1
-            '''
-            self.cursor.execute(yesterday_status_update)
-            self.connection.commit()
+            today_date = str(date.today())
+
+            if today_date != last_scraping_date:
+                yesterday_status_update = f'''
+                    UPDATE Lastscraping SET status = 0 
+                    WHERE last_get <= strftime('{last_scraping_date} 23:59:59') 
+                    AND status = 1
+                '''
+                self.cursor.execute(yesterday_status_update)
+                self.connection.commit()
 
     def get_tweets(self, query, n_tweet=200):
         self.last_scraping = str(datetime.now().strftime("%Y-%m-%d %H:%M:%S.000"))

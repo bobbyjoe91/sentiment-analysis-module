@@ -83,3 +83,8 @@ Kata kunci pencarian (dalam bentuk kata, _hashtag_, dll) dapat diubah dalam vari
 
 Pada variabel `filters`, Anda dapat mengubah nilainya menjadi kueri lanjutan seperti pada [petunjuk berikut](https://unionmetrics.com/resources/how-to-use-advanced-twitter-search-queries/).  Variabel `query` akan menggabungkan semua nilai `keywords` dan `filters` menjadi satu _string_ kata kunci untuk scrapping data _tweet_.
 
+
+
+### _Credits_
+
+Langkah-langkah membuat basis data dan algoritma program pada modul ini disusun oleh pihak Sanbercode kelas Analisis Opini Publik.
