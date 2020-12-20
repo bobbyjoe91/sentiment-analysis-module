@@ -126,7 +126,7 @@ class ScrapperBot:
         insert_into(
             self.connection, 
             self.cursor, 
-            'User',
+            'TwitterUser',
             ['userid', 'name', 'screenname', 'location', 'acccreated', 'follower', 'friend', 'verified'], 
             self.result['user']
         )

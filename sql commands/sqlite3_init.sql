@@ -17,11 +17,11 @@ CREATE TABLE Tweet (
     tweet TEXT,
     cleantweet TEXT,
     scraping_id INTEGER,
-    FOREIGN KEY (userid) REFERENCES User (userid),
+    FOREIGN KEY (userid) REFERENCES TwitterUser (userid),
     FOREIGN KEY (scraping_id) REFERENCES Lastscraping (scraping_id)
 );
 
-CREATE TABLE User (
+CREATE TABLE TwitterUser (
     userid INTEGER PRIMARY KEY NOT NULL,
     name TEXT,
     screenname TEXT,
