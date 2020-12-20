@@ -35,18 +35,32 @@ _Database_ yang dapat digunakan pada proyek/ modul ini adalah yang memiliki stru
 
 ![ERD](assets/erd.png)
 
-Tersedia juga _file_ databaseInit.sql untuk membuat _database_ SQLite 3 kosong dengan struktur seperti gambar di atas. Silahkan eksekusi _file_ .sql tersebut dengan _DB browser_ (DBeaver, dll) atau dengan menggunakan terminal dengan perintah sebagai berikut (misal nama _database_ baru adalah "NewDatabase.db"):
+Tersedia juga _file_ sqlite3_Init.sql (SQLite 3) dan pgsql_init.sql (Postgresql) untuk membuat _database_ kosong dengan struktur seperti gambar di atas. Silahkan eksekusi _file_ .sql tersebut dengan _DB browser_ (DBeaver, dll) atau dengan menggunakan terminal dengan perintah sebagai berikut (misal nama _database_ baru adalah "NewDatabase.db"):
+
+
+
+##### Sqlite 3
 
 Linux/ MacOS
 
-```sqlite
+```bash
 sqlite3 NewDatabase.db ".read databaseInit.sql"
 ```
 
 Windows
 
-```sqlite
+```bash
 sqlite3.exe NewDatabase.db ".read databaseInit.sql"
+```
+
+
+
+##### PostgreSQL
+
+Linux/ MacOS
+
+```bash
+psql -U (username postgre Anda) -d NewDatabase -f pgsql_init.sql
 ```
 
 
